@@ -28,6 +28,12 @@
 
 
  <build>
+  <extensions>
+   <extension>
+    <groupId>org.apache.maven.wagon</groupId>
+    <artifactId>wagon-ssh</artifactId>
+   </extension>
+  </extensions>
   <plugins>
    <plugin>
     <groupId>org.apache.maven.plugins</groupId>
@@ -42,4 +48,14 @@
  </build>
  <dependencies>
  </dependencies>
+
+ <distributionManagement>
+  <repository>
+   <id>metalcon-deploy</id>
+   <uniqueVersion>false</uniqueVersion>
+   <name>Metalcon Repository</name>
+   <url>scp://metalcon2.physik.uni-mainz.de/metalcon-mvn/</url>
+   <layout>default</layout>
+  </repository>
+ </distributionManagement>
 </project>
